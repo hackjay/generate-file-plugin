@@ -1,0 +1,48 @@
+<idea-plugin version="2">
+    <id>com.edwin.plugin.file.generate</id>
+    <name>generate-file-plugin</name>
+    <version>1.0</version>
+    <vendor email="jinming.wu@dianping.com" url="http://www.dianping.com">DianPing</vendor>
+
+    <description><![CDATA[
+      Enter short description for your plugin here.<br>
+      <em>most HTML tags may be used</em>
+    ]]></description>
+
+    <change-notes><![CDATA[
+      Add change notes here.<br>
+      <em>most HTML tags may be used</em>
+    ]]>
+    </change-notes>
+
+    <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
+    <idea-version since-build="131"/>
+
+    <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <application-components>
+        <!-- Add your application components here -->
+    </application-components>
+
+    <project-components>
+        <!-- Add your project components here -->
+    </project-components>
+
+    <actions>
+        <!-- Add your actions here -->
+        <action id="Edwin.TableConfig" class="com.edwin.plugin.GenerateAction"
+                text="Generate File By Table" description="Generate File By Table">
+            <add-to-group group-id="CodeMenu" anchor="first"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="shift alt d"/>
+        </action>
+    </actions>
+
+</idea-plugin>
