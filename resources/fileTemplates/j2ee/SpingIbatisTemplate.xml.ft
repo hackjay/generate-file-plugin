@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+    <bean id="dataSource" class="com.dianping.zebra.group.jdbc.GroupDataSource" init-method="init">
+        <property name="jdbcRef" value=""/>
+    </bean>
+
+    <!-- The SqlMapClient configuration for avatar-based System -->
+    <bean id="sqlMapClient" class="com.dianping.avatar.dao.ibatis.spring.LimitSqlMapClientFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="configLocation" value="classpath:/${sqlMapPath}"/>
+        <property name="sqlConvert" ref="mysqlConverter"/>
+    </bean>
+
+    <!-- The DAO default implementation for avatar -->
+    <bean id="realizeTarget" class="com.dianping.avatar.dao.ibatis.IBatisGenericDaoImpl" abstract="true">
+        <property name="sqlMapClient" ref="sqlMapClient"/>
+    </bean>
+
+</beans>

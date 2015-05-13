@@ -20,6 +20,10 @@ public abstract class AbstractXMLGenerator extends AbstractGenerator {
 
     protected FileTemplate sqlConfigTemplate = FileTemplateManager.getInstance().getJ2eeTemplate("SqlConfigTemplate.xml");
 
+    protected FileTemplate springIbatisTemplate    = FileTemplateManager.getInstance().getJ2eeTemplate("SpingIbatisTemplate.xml");
+
+    protected FileTemplate springDaoTemplate    = FileTemplateManager.getInstance().getJ2eeTemplate("SpringDaoTemplate.xml");
+
     public AbstractXMLGenerator(Configuration configuration, Project project) {
         super(configuration, project);
     }
